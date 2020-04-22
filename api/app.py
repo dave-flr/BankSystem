@@ -1,7 +1,6 @@
-from flask import Flask
+from app import server, db
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Hello, World!"
+if __name__ == '__main__':
+    db.bind(**server.config['PONY'])
+    db.generate_mapping(create_tables=True)
+    server.run(debug=True)
