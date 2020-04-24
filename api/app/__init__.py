@@ -13,4 +13,5 @@ Pony(server)
 
 api = Api(server)
 
-api.add_resource(HelloWorld, '/')
+api.add_resource(Index, '/')
+api.add_resource(Login, '/auth/login')
